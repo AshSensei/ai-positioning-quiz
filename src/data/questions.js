@@ -65,10 +65,10 @@ export const questions = [
     text: "Our team is preparing to launch a new page on the Library Website. Someone suggests using an AI tool to speed up a key part of the build. What's your instinct?",
     quote: null,
     options: [
-      { text: "Jump in and see what happens — I'll figure out if it works as I go", score: -2 },
-      { text: "Try it out, guided by a general sense of whether it feels appropriate", score: -1 },
-      { text: "Weigh it against principles I already have about AI in my work", score: 1 },
-      { text: "Run it through my framework — I have clear criteria for decisions like this", score: 2 },
+      { text: "I'd just start working right away and see what happens, I'll figure out if it works as I go", score: -2 },
+      { text: "I'd be open to trying the AI tool and see if it feels appropriate to me", score: -1 },
+      { text: "I'd weigh the use of AI against my principles that I already have about AI in my work", score: 1 },
+      { text: "I'd walk through the AI usage through my personal framework, I have clear criteria for decisions like this", score: 2 },
     ]
   },
   {
@@ -77,20 +77,20 @@ export const questions = [
     text: "How do you feel when AI tools aren't available for a task you're working on?",
     quote: null,
     options: [
-      { text: "Relieved, or indifferent — I wasn't planning to use them anyway", score: -2 },
+      { text: "Relieved, or indifferent, I wasn't planning to use them anyway", score: -2 },
       { text: "Mildly inconvenienced for certain tasks", score: -1 },
-      { text: "Noticeably slowed down — I'd have to rework my approach", score: 1 },
-      { text: "Significantly disrupted — AI is load-bearing in my workflow", score: 2 },
+      { text: "Noticeably slowed down, I'd have to rework my approach", score: 1 },
+      { text: "Significantly disrupted, AI is load-bearing in my workflow", score: 2 },
     ]
   },
   {
     id: 8,
     axis: 'y',
-    text: "Academic library staff report a wide range of comfort levels with AI, alongside shared concerns about ethics and privacy. As someone on the DX team — a team with real influence over how the library adopts technology — how defined is your personal ethical framework for AI use?",
+    text: "Academic library staff report a wide range of comfort levels with AI, alongside shared concerns about ethics and privacy. As someone on the DX team, where we have influence over how the library adopts technology, how defined is your personal ethical framework for AI use?",
     quote: { text: "Library professionals have concerns about AI including but not limited to ethics, privacy, and training.", source: "Tips and Trends: AI Developments and Resources for Academic Librarians" },
     options: [
-      { text: "Still forming — I haven't landed anywhere firm yet", score: -2 },
-      { text: "I have general values but haven't thought through AI specifically", score: -1 },
+      { text: "I'm still forming my framework, I haven't landed anywhere firm yet", score: -2 },
+      { text: "I have general values but I haven't thought through AI specifically", score: -1 },
       { text: "I have a clear personal stance on AI ethics, even if it's not written down", score: 1 },
       { text: "I have an articulated, documented position I can explain and defend", score: 2 },
     ]

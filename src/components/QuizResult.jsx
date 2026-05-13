@@ -11,7 +11,8 @@ export default function QuizResult({ positionId, onRetake }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
       className="flex flex-col gap-8 py-8"
     >
       <div className="flex flex-col gap-3">

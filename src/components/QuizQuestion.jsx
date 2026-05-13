@@ -1,28 +1,17 @@
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Card } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import ProgressBar from './ProgressBar'
 
-export default function QuizQuestion({ question, questionIndex, total, onAnswer, onNext }) {
-  const [selected, setSelected] = useState(null)
-
-  function handleSelect(option) {
-    setSelected(option)
-    onAnswer(question.axis, option.score)
-  }
-
+export default function QuizQuestion({ question, selected, onSelect }) {
   return (
     <motion.div
       key={question.id}
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className="flex flex-col gap-6"
     >
-      <ProgressBar current={questionIndex + 1} total={total} />
-
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 min-h-[10rem]">
         {question.quote && (
           <blockquote className="border-l-2 border-primary pl-4 py-1">
             <p className="text-sm italic text-muted-foreground">
@@ -33,7 +22,6 @@ export default function QuizQuestion({ question, questionIndex, total, onAnswer,
             </footer>
           </blockquote>
         )}
-
         <p className="text-lg font-medium text-foreground leading-snug">
           {question.text}
         </p>
@@ -49,7 +37,7 @@ export default function QuizQuestion({ question, questionIndex, total, onAnswer,
               transition={{ duration: 0.15 }}
             >
               <Card
-                onClick={() => handleSelect(option)}
+                onClick={() => onSelect(option)}
                 className={`p-4 cursor-pointer text-left transition-colors h-full ${
                   isSelected
                     ? 'border-primary bg-primary/5'
@@ -63,12 +51,6 @@ export default function QuizQuestion({ question, questionIndex, total, onAnswer,
             </motion.div>
           )
         })}
-      </div>
-
-      <div className="flex justify-end">
-        <Button onClick={onNext} disabled={selected === null}>
-          {questionIndex === total - 1 ? 'Finish' : 'Next'}
-        </Button>
       </div>
     </motion.div>
   )

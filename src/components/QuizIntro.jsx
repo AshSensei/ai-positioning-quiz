@@ -6,7 +6,8 @@ export default function QuizIntro({ onStart }) {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.4 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
       className="flex flex-col items-center text-center gap-6 py-16"
     >
       <div className="flex flex-col gap-2">
