@@ -43,7 +43,7 @@ export const questions = [
     options: [
       { text: "I'd say it felt like the right decision in that moment", score: -2 },
       { text: "I'd point to a general intuition I have regarding AI use but not a strict set of rules", score: -1 },
-      { text: "I'd reference a set of principles I've developed over time.", score: 1 },
+      { text: "I'd reference a set of principles I've developed over time", score: 1 },
       { text: "I'd walk them through the framework I use to make that call", score: 2 },
     ]
   },
@@ -53,10 +53,10 @@ export const questions = [
     text: "Across the projects you've worked on in the last month, how deeply has AI been involved in what you've produced?",
     quote: null,
     options: [
-      { text: "None, I completed all my work without the use of AI.", score: -2 },
-      { text: "Minor, I used AI here and there for some small tasks.", score: -1 },
-      { text: "Meaningful, AI contributed to several things I worked on.", score: 1 },
-      { text: "Central, I used AI on most of what I worked on.", score: 2 },
+      { text: "None, I completed all my work without the use of AI", score: -2 },
+      { text: "Minor, I used AI here and there for some small tasks", score: -1 },
+      { text: "Meaningful, AI contributed to several things I worked on", score: 1 },
+      { text: "Central, I used AI on most of what I worked on", score: 2 },
     ]
   },
   {
@@ -68,7 +68,7 @@ export const questions = [
       { text: "I'd just start working right away and see what happens, I'll figure out if it works as I go", score: -2 },
       { text: "I'd be open to trying the AI tool and see if it feels appropriate to me", score: -1 },
       { text: "I'd weigh the use of AI against my principles that I already have about AI in my work", score: 1 },
-      { text: "I'd walk through the AI usage through my personal framework, I have clear criteria for decisions like this", score: 2 },
+      { text: "I'd walk through the AI usage using my personal framework, I have clear criteria for decisions like this", score: 2 },
     ]
   },
   {
@@ -98,13 +98,13 @@ export const questions = [
   {
     id: 9,
     axis: 'x',
-    text: "The DX team shapes how the UCSD Library shows up digitally. How much is AI shaping how you do that work right now?",
+    text: "You're redesigning a section of the library website. This includes new information architecture, updated copy, and a fresh visual direction. Which best describes your approach?",
     quote: null,
     options: [
-      { text: "Not much — my digital work is still primarily human-led", score: -2 },
-      { text: "A little — I'm experimenting in low-stakes areas", score: -1 },
-      { text: "Meaningfully — AI influences several parts of how I approach DX work", score: 1 },
-      { text: "Significantly — AI is central to how I think about and execute DX work", score: 2 },
+      { text: "I'd work through all of it myself. All the research, writing, and design decisions are mine to make", score: -2 },
+      { text: "I'd do most of it myself but might use AI to pressure-test an idea or unstick a specific problem", score: -1 },
+      { text: "I'd bring AI in at several stages, maybe to explore IA options in the landscape review, draft/revise copy, or generate visual concepts alongside my own", score: 1 },
+      { text: "AI would be involved throughout the entire design process from initial research and structure to copy and validating designs", score: 2 },
     ]
   },
   {
@@ -113,7 +113,7 @@ export const questions = [
     text: "\"With the right priorities and guardrails, AI can help advance science, cure diseases, build new industries, and maintain human dignity.\" How close are you to having your own version of those guardrails defined?",
     quote: { text: "With the right priorities and guardrails, AI can help advance science, cure diseases, build new industries, expand joy, and maintain human dignity.", source: "The Case Against AI Everything, Everywhere, All at Once — TIME" },
     options: [
-      { text: "I haven't really started — I respond to AI as situations come up", score: -2 },
+      { text: "I haven't really created any guidelines, I respond to AI as situations come up", score: -2 },
       { text: "I have some instincts but nothing I'd call guardrails yet", score: -1 },
       { text: "I have working principles I apply, even if they're not written down", score: 1 },
       { text: "I have a clear, documented personal framework I actively use", score: 2 },
@@ -122,49 +122,49 @@ export const questions = [
   {
     id: 11,
     axis: 'x',
-    text: "When you're writing — whether that's documentation, UX copy, a proposal, or an email — where does AI fit?",
+    text: "When you're writing, whether that's documentation, UX copy, a proposal, or an email, what does your AI use look like?",
     quote: null,
     options: [
-      { text: "I write everything myself — AI doesn't touch my written work", score: -2 },
+      { text: "I write everything myself. AI doesn't play a role at all", score: -2 },
       { text: "I occasionally use it to polish or check something I've already written", score: -1 },
       { text: "I use it to draft, iterate, or think through structure alongside my own writing", score: 1 },
-      { text: "It's a core part of my writing process — most of my written work involves AI at some stage", score: 2 },
+      { text: "It's a core part of my writing process. Most of my written work involves AI at some stage", score: 2 },
     ]
   },
   {
     id: 12,
     axis: 'y',
-    text: "You come across a new AI tool that looks genuinely useful for your work. What do you do?",
+    text: "How do you stay current on AI developments relevant to your work?",
     quote: null,
     options: [
-      { text: "Try it out — I'll work out whether and how it fits as I experiment", score: -2 },
-      { text: "Explore it with some informal gut-checks about whether it seems appropriate", score: -1 },
-      { text: "Evaluate it against the principles I already use to guide my AI choices", score: 1 },
-      { text: "Put it through a deliberate process — I have criteria for adopting new tools", score: 2 },
+      { text: "I pick things up passively through articles, conversations, and things that cross my path naturally", score: -2 },
+      { text: "I follow along informally. I pay attention when something seems relevant but I'm not deliberate about it", score: -1 },
+      { text: "I have a general approach. I have specific sources I return to, people I follow, a rough sense of what I want to track", score: 1 },
+      { text: "I've identified what I need to stay current on and how I do it", score: 2 },
     ]
   },
   {
     id: 13,
     axis: 'x',
-    text: "Think about how you approach a problem you haven't solved before — a new technical challenge, an unfamiliar design pattern, a tricky content decision. What role does AI play in that process?",
+    text: "Think about how you approach a problem you haven't solved before such as a new technical challenge, an unfamiliar design pattern, a tricky content decision. What role does AI play in that process?",
     quote: null,
     options: [
-      { text: "I research and work through it myself — AI isn't part of my exploration process", score: -2 },
+      { text: "I research and work through it myself. AI isn't part of my exploration process", score: -2 },
       { text: "I might check AI after I've already formed my own approach", score: -1 },
       { text: "I use AI as one of several inputs while I'm actively figuring it out", score: 1 },
-      { text: "AI is usually my first move — it's how I orient myself on new problems", score: 2 },
+      { text: "AI is usually my first move to understand something new, it's how I orient myself on new problems", score: 2 },
     ]
   },
   {
     id: 14,
     axis: 'y',
-    text: "When something goes wrong with an AI-assisted task — the output is off, a decision backfires, or the tool misleads you — what do you do differently next time?",
+    text: "When something goes wrong with an AI-assisted task, what do you do differently next time?",
     quote: null,
     options: [
       { text: "I note it mentally and stay more cautious, but I don't change my approach formally", score: -2 },
-      { text: "I adjust my instincts — I'm more careful in similar situations going forward", score: -1 },
+      { text: "I adjust my instincts and I'm more careful in similar situations going forward", score: -1 },
       { text: "I update the principles I use to guide when and how I use AI", score: 1 },
-      { text: "I revise my framework — failure is part of how I actively maintain and improve it", score: 2 },
+      { text: "I revise my framework using what went wrong to refine how I use AI", score: 2 },
     ]
   },
 ];

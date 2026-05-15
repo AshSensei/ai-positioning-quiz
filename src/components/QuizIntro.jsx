@@ -22,8 +22,7 @@ export default function QuizIntro({ onStart }) {
       <p className="max-w-prose text-base text-foreground/80 leading-relaxed">
         This quiz places you on a 3×3 Individual AI Positioning Matrix based on
         how you use AI in your work and how deliberately you approach those
-        choices. There are no right or wrong answers — every position reflects a
-        legitimate way of working. It takes about 3 minutes.
+        choices. There are no right or wrong answers. Every position reflects a different way of working. This quiz should take 5 minutes.
       </p>
 
       <Button size="lg" onClick={onStart}>

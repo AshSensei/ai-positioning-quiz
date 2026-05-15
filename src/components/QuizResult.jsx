@@ -39,7 +39,7 @@ export default function QuizResult({ positionId, onRetake }) {
 
       <div className="rounded-lg border bg-muted/40 p-4 flex flex-col gap-3 text-sm text-muted-foreground leading-relaxed">
         <p>
-          No position is better or worse than another — the best fit depends on
+          No position is better or worse than another. The best fit depends on
           your workflow, experience level, and the specific problem you're solving.
         </p>
         <p>
