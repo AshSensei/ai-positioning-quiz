@@ -11,7 +11,7 @@ const grid = Array.from({ length: 3 }, (_, row) =>
   })
 )
 
-export default function MatrixDisplay({ highlightedId }) {
+export default function MatrixDisplay({ highlightedId, selectedId, onSelect }) {
   return (
     <div className="w-full overflow-x-auto">
       <div className="min-w-[280px] flex flex-col gap-1">
@@ -37,20 +37,24 @@ export default function MatrixDisplay({ highlightedId }) {
             <div className="grid grid-cols-3 gap-1">
               {row.map(position => {
                 const isHighlighted = position.id === highlightedId
+                const isSelected = position.id === selectedId
                 return (
-                  <div
+                  <button
                     key={position.id}
-                    className={`rounded-md border p-2 flex flex-col gap-0.5 transition-colors ${
+                    onClick={() => onSelect(position.id)}
+                    className={`rounded-md border p-2 flex flex-col gap-0.5 transition-colors text-left cursor-pointer ${
                       isHighlighted
                         ? 'border-primary bg-primary/10 text-foreground'
-                        : 'border-border bg-muted/30 text-muted-foreground/60'
+                        : isSelected
+                        ? 'border-primary/50 bg-primary/5 text-foreground/80'
+                        : 'border-border bg-muted/30 text-muted-foreground/60 hover:border-border/80 hover:bg-muted/50'
                     }`}
                   >
                     <span className="text-xs font-mono leading-none">{position.id}</span>
-                    <span className={`text-xs leading-snug ${isHighlighted ? 'font-medium' : ''}`}>
+                    <span className={`text-xs leading-snug ${isHighlighted || isSelected ? 'font-medium' : ''}`}>
                       {position.name}
                     </span>
-                  </div>
+                  </button>
                 )
               })}
             </div>

@@ -1,3 +1,12 @@
+export const axisDescriptions = {
+  'Human Craft': 'My core work is based exclusively on human judgment, skill & experience.',
+  'Hybrid Navigator': 'I treat AI as a supportive partner, blending my insight with algorithmic assistance.',
+  'Integrated AI': 'AI is embedded in the way I do most of my work and learning.',
+  'Flexible / Ad-hoc': 'I decide in the moment, based on immediate context, personal experience, and emerging opportunities.',
+  'Balanced': 'I have a general framework that guides me, and I can adapt it on the fly when the situation calls for it.',
+  'Intentional & Planned': 'I follow a deliberately chosen, documented approach for if, why, and how I use AI tools.',
+}
+
 export const positions = {
   1: {
     id: 1,

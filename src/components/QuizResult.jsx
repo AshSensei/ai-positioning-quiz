@@ -1,11 +1,29 @@
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { positions } from '@/data/positions'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
+import { positions, axisDescriptions } from '@/data/positions'
 import MatrixDisplay from './MatrixDisplay'
+
+function AxisPill({ label, variant = 'secondary' }) {
+  return (
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Badge variant={variant} className="cursor-help">{label}</Badge>
+      </TooltipTrigger>
+      <TooltipContent className="max-w-[220px] text-center">
+        {axisDescriptions[label]}
+      </TooltipContent>
+    </Tooltip>
+  )
+}
 
 export default function QuizResult({ positionId, onRetake }) {
   const position = positions[positionId]
+  const [selectedId, setSelectedId] = useState(positionId)
+  const selectedPosition = positions[selectedId]
 
   return (
     <motion.div
@@ -26,15 +44,67 @@ export default function QuizResult({ positionId, onRetake }) {
         </motion.h1>
 
         <div className="flex gap-2 flex-wrap">
-          <Badge variant="secondary">{position.xLabel}</Badge>
-          <Badge variant="secondary">{position.yLabel}</Badge>
+          <AxisPill label={position.xLabel} />
+          <AxisPill label={position.yLabel} />
         </div>
       </div>
 
-      <MatrixDisplay highlightedId={positionId} />
+      <MatrixDisplay
+        highlightedId={positionId}
+        selectedId={selectedId}
+        onSelect={setSelectedId}
+      />
 
-      <p className="text-base text-foreground/80 leading-relaxed">
-        {position.description}
+      <AnimatePresence mode="wait">
+        {selectedId === positionId ? (
+          <motion.p
+            key={selectedId}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="text-base text-foreground/80 leading-relaxed"
+          >
+            {selectedPosition.description}
+          </motion.p>
+        ) : (
+          <motion.div
+            key={selectedId}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <Card>
+              <CardHeader className="pb-2">
+                <span className="text-base font-medium text-foreground">
+                  {selectedPosition.name}
+                </span>
+                <div className="flex gap-2 flex-wrap pt-1">
+                  <AxisPill label={selectedPosition.xLabel} variant="outline" />
+                  <AxisPill label={selectedPosition.yLabel} variant="outline" />
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  {selectedPosition.description}
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <p className="text-sm text-muted-foreground">
+        Want to go deeper?{' '}
+        <a
+          href="https://ucsdlibrary.atlassian.net/wiki/x/AwAU3w"
+          target="_blank"
+          rel="noreferrer"
+          className="text-foreground underline underline-offset-2 hover:text-foreground/70 transition-colors"
+        >
+          The full matrix is documented on LiSN.
+        </a>
       </p>
 
       <div className="rounded-lg border bg-muted/40 p-4 flex flex-col gap-3 text-sm text-muted-foreground leading-relaxed">
